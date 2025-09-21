@@ -1,0 +1,15 @@
+server:
+  port: 8080                  # Port
+  servlet:
+    context-path: /identity   # Context path for API
+
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/identitydb
+        username: postgres
+        password: yourpassword
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
