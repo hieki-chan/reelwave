@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile Mockup</title>
+    <link href="./ascet/bootrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="frofile_form.css" />
+  </head>
+  <body class="bg-light text-dark">
+    <div class="container mt-5">
+      <header class="row align-items-center mb-4 profile-header">
+        <div class="col-auto">
+          <img
+            src="./anh_bia.png"
+            class="rounded-circle profile-avatar"
+            alt="Profile Picture"
+          />
+        </div>
+        <div class="col">
+          <h1 class="h4 mb-1"><i class="fas fa-music me-1"></i>Tăng Hữu Huy</h1>
+          <p class="text-muted mb-2">@iamstupid172</p>
+          <div class="d-flex align-items-center mb-3">
+            <button class="btn btn-danger btn-sm me-2">Sửa hồ sơ</button>
+            <button class="btn btn-outline-light btn-sm me-2">
+              Quảng bá bài đăng
+            </button>
+            <button class="btn btn-outline-light btn-sm me-2">
+              <i class="fas fa-bookmark"></i>
+            </button>
+            <button class="btn btn-outline-light btn-sm">
+              <i class="fas fa-ellipsis-h"></i>
+            </button>
+          </div>
+          <div class="d-flex mb-2">
+            <span class="me-4"><strong class="h5">921</strong> Đã follow</span>
+            <span class="me-4"><strong class="h5">80</strong> follower</span>
+            <span class="me-4"><strong class="h5">818</strong> Lượt thích</span>
+          </div>
+          <p class="small text-muted">
+            Tiểu Sử: Tôi đang không biết mình đang học cái gì nữa
+          </p>
+        </div>
+      </header>
+
+      <ul
+        class="nav nav-tabs profile-tabs mb-4"
+        id="profileTabs"
+        role="tablist"
+      >
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="video-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#video-pane"
+            type="button"
+            role="tab"
+            aria-controls="video-pane"
+            aria-selected="true"
+          >
+            <i class="fas fa-video me-2"></i>Video
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="liked-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#liked-pane"
+            type="button"
+            role="tab"
+            aria-controls="liked-pane"
+            aria-selected="false"
+          >
+            <i class="fas fa-heart me-2"></i>Yêu thích
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="saved-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#saved-pane"
+            type="button"
+            role="tab"
+            aria-controls="saved-pane"
+            aria-selected="false"
+          >
+            <i class="fas fa-bookmark me-2"></i>Đã thích
+          </button>
+        </li>
+      </ul>
+
+      <div class="d-flex justify-content-end mb-3">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-light btn-sm">
+            Mới nhất
+          </button>
+          <button type="button" class="btn btn-outline-light btn-sm">
+            Thịnh Hành
+          </button>
+          <button type="button" class="btn btn-outline-light btn-sm">
+            Cũ nhất
+          </button>
+        </div>
+      </div>
+
+      <div class="tab-content" id="profileTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="video-pane"
+          role="tabpanel"
+          aria-labelledby="video-tab"
+        >
+          <div
+            class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-2 video-grid"
+          >
+            <div class="col">
+              <div class="video-card">
+                <img
+                  src="https://via.placeholder.com/200x300/343A40/FFFFFF?text=VIDEO+1"
+                  alt="Video Thumbnail"
+                  class="img-fluid video-thumbnail"
+                />
+                <div class="video-overlay">
+                  <i class="fas fa-play me-1"></i>0
+                  <i class="fas fa-lock video-lock"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="video-card">
+                <img
+                  src="https://via.placeholder.com/200x300/343A40/FFFFFF?text=VIDEO+2"
+                  alt="Video Thumbnail"
+                  class="img-fluid video-thumbnail"
+                />
+                <div class="video-overlay">
+                  <i class="fas fa-play me-1"></i>0
+                  <i class="fas fa-lock video-lock"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="video-card">
+                <img
+                  src="https://via.placeholder.com/200x300/343A40/FFFFFF?text=VIDEO+3"
+                  alt="Video Thumbnail"
+                  class="img-fluid video-thumbnail"
+                />
+                <div class="video-overlay">
+                  <i class="fas fa-play me-1"></i>0
+                  <i class="fas fa-lock video-lock"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="video-card">
+                <img
+                  src="https://via.placeholder.com/200x300/343A40/FFFFFF?text=VIDEO+4"
+                  alt="Video Thumbnail"
+                  class="img-fluid video-thumbnail"
+                />
+                <div class="video-overlay">
+                  <i class="fas fa-play me-1"></i>0
+                  <i class="fas fa-lock video-lock"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="video-card">
+                <img
+                  src="https://via.placeholder.com/200x300/343A40/FFFFFF?text=VIDEO+5"
+                  alt="Video Thumbnail"
+                  class="img-fluid video-thumbnail"
+                />
+                <div class="video-overlay">
+                  <i class="fas fa-play me-1"></i>0
+                  <i class="fas fa-lock video-lock"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="video-card">
+                <img
+                  src="https://via.placeholder.com/200x300/343A40/FFFFFF?text=VIDEO+6"
+                  alt="Video Thumbnail"
+                  class="img-fluid video-thumbnail"
+                />
+                <div class="video-overlay">
+                  <i class="fas fa-play me-1"></i>0
+                  <i class="fas fa-lock video-lock"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="tab-pane fade"
+          id="liked-pane"
+          role="tabpanel"
+          aria-labelledby="liked-tab"
+        >
+          <p class="text-center text-muted p-5">Chưa có video yêu thích.</p>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="saved-pane"
+          role="tabpanel"
+          aria-labelledby="saved-tab"
+        >
+          <p class="text-center text-muted p-5">Chưa có video đã thích.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./ascet/bootrap/js/bootstrap.bundle.min.js"></script>
+    <script src="profiel.js"></script>
+  </body>
+</html>

@@ -2,7 +2,7 @@ body {
   background-color: #fafafa;
 }
 .phone-frame {
-  background: url("./frame.png") no-repeat center center; /* khung điện thoại PNG */
+  background: url("./frame.png") no-repeat center center;
   background-size: contain;
   width: 550px;
   height: 180px;
@@ -13,7 +13,7 @@ body {
   margin-top: 20px;
 }
 .phone-frame img {
-  width: 550px; /* vừa khung */
+  width: 550px;
   height: 480px;
   object-fit: cover;
   border-radius: 20px;

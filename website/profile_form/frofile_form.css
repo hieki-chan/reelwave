@@ -1,0 +1,62 @@
+body {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+/* Profile Avatar Styling */
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid #333;
+}
+
+.profile-tabs .nav-link {
+  color: #161616;
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 1rem 1.5rem;
+  font-weight: bold;
+}
+
+.profile-tabs .nav-link.active {
+  color: #141313;
+  border-bottom: 2px solid #181717;
+  background-color: transparent;
+}
+
+.video-card {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  background-color: #333;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px 8px;
+  /* Gradient tạo hiệu ứng bóng mờ ở dưới */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  color: #0e0d0d;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.video-lock {
+  font-size: 1rem;
+}
