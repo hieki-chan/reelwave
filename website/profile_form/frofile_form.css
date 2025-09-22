@@ -60,3 +60,31 @@ body {
 .video-lock {
   font-size: 1rem;
 }
+
+.video-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 8px;
+  opacity: 0; /* ẩn */
+  visibility: hidden; /* ẩn */
+  transition: opacity 0.3s;
+}
+
+.video-card:hover .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tab-content {
+  margin-top: 20px;
+}
+
+/* đảm bảo video grid tự co theo màn hình */
+.video-grid {
+  max-height: calc(100vh - 350px); /* trừ header và tab */
+  overflow-y: auto;
+}
