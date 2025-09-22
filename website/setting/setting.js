@@ -37,7 +37,6 @@ profileForm.addEventListener("submit", (e) => {
     profileForm.classList.add("was-validated");
     return;
   }
-  // Mock saving: in real app, send fetch() to backend here
   document.getElementById("displayName").textContent =
     document.getElementById("inputName").value;
   document.getElementById("emailDisplay").textContent =
@@ -46,7 +45,6 @@ profileForm.addEventListener("submit", (e) => {
 });
 
 document.getElementById("btnCancelProfile").addEventListener("click", () => {
-  // reset to displayed values (mock behavior)
   document.getElementById("inputName").value =
     document.getElementById("displayName").textContent;
   document.getElementById("inputEmail").value =
@@ -54,11 +52,9 @@ document.getElementById("btnCancelProfile").addEventListener("click", () => {
   profileForm.classList.remove("was-validated");
 });
 
-// --- Password form ---
 const passwordForm = document.getElementById("passwordForm");
 passwordForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  // custom validation: check pattern and match
   const newPwd = document.getElementById("newPassword");
   const confirm = document.getElementById("confirmPassword");
   let valid = true;
@@ -73,7 +69,6 @@ passwordForm.addEventListener("submit", (e) => {
     passwordForm.classList.add("was-validated");
     return;
   }
-  // In a real app you would verify currentPassword on server
   document.getElementById("currentPassword").value = "";
   document.getElementById("newPassword").value = "";
   document.getElementById("confirmPassword").value = "";
@@ -81,34 +76,28 @@ passwordForm.addEventListener("submit", (e) => {
   showToast("Thành công", "Mật khẩu đã được cập nhật.");
 });
 
-// --- 2FA toggle ---
 const twoFactor = document.getElementById("twoFactor");
 twoFactor.addEventListener("change", (e) => {
   if (e.target.checked) {
-    // In real app: open setup QR/modal. Here show toast and mock enabled.
     showToast("2FA", "Xác thực hai yếu tố đã được bật.");
   } else {
     showToast("2FA", "Xác thực hai yếu tố đã bị tắt.");
   }
 });
 
-// --- Delete account ---
 const confirmInput = document.getElementById("confirmDeleteInput");
 const btnConfirmDelete = document.getElementById("btnConfirmDelete");
 confirmInput.addEventListener("input", () => {
   btnConfirmDelete.disabled = confirmInput.value.trim() !== "DELETE";
 });
 btnConfirmDelete.addEventListener("click", () => {
-  // Mock deletion. In real app call backend then redirect.
   const modal = bootstrap.Modal.getInstance(
     document.getElementById("deleteModal")
   );
   modal.hide();
   showToast("Đã xóa", "Tài khoản của bạn đã bị xóa (mock).");
-  // Optionally redirect: window.location.href = '/goodbye';
 });
 
-// --- Simple persistence (localStorage) to show state preserved on refresh (mock only) ---
 window.addEventListener("load", () => {
   const savedName = localStorage.getItem("mock_name");
   const savedEmail = localStorage.getItem("mock_email");
@@ -130,10 +119,8 @@ profileForm.addEventListener("submit", () => {
     "mock_email",
     document.getElementById("inputEmail").value
   );
-  // if avatar is a local object URL we can't persist it; if user uploaded a DataURL we could store, but skipped for brevity
 });
 
-// Accessibility: enable keyboard focus outlines when user uses keyboard
 (function () {
   function handleFirstTab(e) {
     if (e.key === "Tab") document.body.classList.add("user-is-tabbing");

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Explore</title>
+    <!-- Bootstrap CSS -->
+    <link href="./ascet/bootrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="explore.css" />
+  </head>
+  <body>
+    <div class="container py-4">
+      <h2 class="mb-4">🔎 Explore</h2>
+
+      <!-- Search + Filter -->
+      <div class="row g-2 mb-4">
+        <div class="col-md-6">
+          <input
+            id="searchInput"
+            class="form-control"
+            placeholder="Tìm kiếm..."
+          />
+        </div>
+        <div class="col-md-3">
+          <select id="categoryFilter" class="form-select">
+            <option value="">Tất cả danh mục</option>
+            <option value="tech">Công nghệ</option>
+            <option value="music">Âm nhạc</option>
+            <option value="travel">Du lịch</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select id="sortSelect" class="form-select">
+            <option value="latest">Mới nhất</option>
+            <option value="oldest">Cũ nhất</option>
+            <option value="az">A → Z</option>
+            <option value="za">Z → A</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div id="cardsContainer" class="row g-3">
+        <!-- Card template -->
+        <div
+          class="col-md-4 card-item"
+          data-category="tech"
+          data-title="Laptop mới"
+        >
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/400x200"
+              class="card-img-top"
+              alt=""
+            />
+            <div class="card-body">
+              <h5 class="card-title">Laptop mới</h5>
+              <p class="card-text">Khám phá công nghệ mới nhất.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-md-4 card-item"
+          data-category="music"
+          data-title="Nhạc EDM"
+        >
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/400x200"
+              class="card-img-top"
+              alt=""
+            />
+            <div class="card-body">
+              <h5 class="card-title">Nhạc EDM</h5>
+              <p class="card-text">Thưởng thức giai điệu sôi động.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-md-4 card-item"
+          data-category="travel"
+          data-title="Hạ Long Bay"
+        >
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/400x200"
+              class="card-img-top"
+              alt=""
+            />
+            <div class="card-body">
+              <h5 class="card-title">Hạ Long Bay</h5>
+              <p class="card-text">Điểm du lịch nổi tiếng Việt Nam.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-md-4 card-item"
+          data-category="tech"
+          data-title="AI Tool"
+        >
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/400x200"
+              class="card-img-top"
+              alt=""
+            />
+            <div class="card-body">
+              <h5 class="card-title">AI Tool</h5>
+              <p class="card-text">Ứng dụng trí tuệ nhân tạo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="./ascet/bootrap/js/bootstrap.bundle.min.js"></script>
+    <script src="explore.js"></script>
+  </body>
+</html>

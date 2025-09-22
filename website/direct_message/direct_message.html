@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Direct Message</title>
+    <!-- Bootstrap -->
+    <link href="./ascet/bootrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="direct_message.css" />
+  </head>
+  <body>
+    <div class="container-fluid py-3">
+      <div class="row chat-container">
+        <!-- Sidebar -->
+        <div class="col-md-3 chat-list p-3">
+          <h5>💬 Direct Message</h5>
+          <ul class="list-group" id="chatList">
+            <li class="list-group-item active" data-user="Alice">Alice</li>
+            <li class="list-group-item" data-user="Bob">Bob</li>
+            <li class="list-group-item" data-user="Charlie">Charlie</li>
+          </ul>
+        </div>
+
+        <!-- Main Chat -->
+        <div class="col-md-9 d-flex flex-column">
+          <div
+            class="d-flex align-items-center justify-content-between p-3 border-bottom"
+          >
+            <h5 id="chatWith">Alice</h5>
+            <a href="index.html" class="btn btn-outline-secondary btn-sm"
+              >Home</a
+            >
+          </div>
+          <div id="chatMessages" class="flex-grow-1 p-3 chat-messages">
+            <div class="message other">Xin chào 👋</div>
+            <div class="message me">Hello Alice!</div>
+          </div>
+          <div class="chat-input p-3">
+            <form id="messageForm" class="d-flex gap-2">
+              <input
+                type="text"
+                id="messageInput"
+                class="form-control"
+                placeholder="Nhập tin nhắn..."
+              />
+              <button class="btn btn-primary" type="submit">Gửi</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="./ascet/bootrap/js/bootstrap.bundle.min.js"></script>
+    <script src="direct_message.js"></script>
+  </body>
+</html>
