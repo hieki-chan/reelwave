@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sửa hồ sơ</title>
+    <link href="./ascet/bootrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="profile_edit.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <div class="card p-4" style="max-width: 500px; margin: auto">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">Sửa hồ sơ</h5>
+          <a
+            href="./profile_form.html"
+            class="btn-close"
+            aria-label="Close"
+          ></a>
+        </div>
+
+        <div class="text-center mb-3 position-relative">
+          <img src="./anh_bia.png" alt="Avatar" class="profile-img" />
+          <p class="mt-2">Ảnh hồ sơ</p>
+        </div>
+
+        <form>
+          <div class="mb-3">
+            <label for="tiktokID" class="form-label">Instagram ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="tiktokID"
+              value="iamstupid172"
+            />
+            <small class="text-muted"
+              >Instagram ID chỉ có thể bao gồm chữ cái, chữ số, dấu gạch dưới và
+              dấu chấm. Khi thay đổi Instagram ID, liên kết hồ sơ của bạn cũng
+              sẽ thay đổi.</small
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="name" class="form-label">Tên</label>
+            <input type="text" class="form-control" id="name" value="Hát u y" />
+            <small class="text-muted"
+              >Bạn chỉ có thể thay đổi biệt danh 7 ngày một lần.</small
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="bio" class="form-label">Tiểu sử</label>
+            <textarea class="form-control" id="bio" rows="3">
+Đéo bt mk đang hk cl j nx</textarea
+            >
+            <small class="text-muted">25/80</small>
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-secondary me-2">Hủy</button>
+            <button type="submit" class="btn btn-primary">Lưu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./ascet/bootrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
