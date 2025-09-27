@@ -1,4 +1,4 @@
-package org.reelwave.identity;
+package org.mobilehub.identity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

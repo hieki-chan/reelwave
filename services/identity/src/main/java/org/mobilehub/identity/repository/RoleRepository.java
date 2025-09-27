@@ -1,6 +1,6 @@
-package org.reelwave.identity.repository;
+package org.mobilehub.identity.repository;
 
-import org.reelwave.identity.entity.Role;
+import org.mobilehub.identity.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

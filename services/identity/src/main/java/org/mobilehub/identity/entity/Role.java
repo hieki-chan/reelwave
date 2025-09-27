@@ -1,4 +1,4 @@
-package org.reelwave.identity.entity;
+package org.mobilehub.identity.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
