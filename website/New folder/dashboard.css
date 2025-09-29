@@ -1,0 +1,10 @@
+body {
+  background-color: #f8f9fa;
+}
+.card-small {
+  min-height: 100px;
+}
+.table td,
+.table th {
+  vertical-align: middle;
+}
