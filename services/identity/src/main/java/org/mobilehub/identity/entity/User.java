@@ -1,6 +1,7 @@
 package org.mobilehub.identity.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Getter;
@@ -19,13 +20,13 @@ public class User {
     @Column(name = "id")
     String id;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true, nullable = false)
     String email;
 
-    @Column(name = "username")
+    @Column(name = "username", nullable = false,  unique = true)
     String username;
 
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     String password;
 
     @ManyToMany(fetch = FetchType.EAGER)

@@ -14,26 +14,22 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class UserController {
-    UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    UserService userService;
 
     @PostMapping("/register")
     public ResponseEntity<UserResponse> register(@RequestBody @Valid RegisterUserRequest registerRequest) {
-        System.out.println("Request:" + registerRequest.getEmail());
-        var userRespond = userService.register(registerRequest);
+        var userResponse = userService.register(registerRequest);
 
-        return ResponseEntity.ok(userRespond);
+        return ResponseEntity.ok(userResponse);
     }
 
     @GetMapping("/{userId}")
     ResponseEntity<UserResponse> getUser(@PathVariable("userId") String userId) {
-        var userRespond = userService.getUser(userId);
-        return ResponseEntity.ok(userRespond);
+        var userResponse = userService.getUser(userId);
+        return ResponseEntity.ok(userResponse);
     }
 }

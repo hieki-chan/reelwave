@@ -12,6 +12,7 @@ import org.mobilehub.identity.mapper.UserMapper;
 import org.mobilehub.identity.repository.RoleRepository;
 import org.mobilehub.identity.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -21,16 +22,16 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class UserService {
-    @Autowired
     UserRepository userRepository;
-    @Autowired
     UserMapper userMapper;
-    @Autowired
+
     RoleRepository roleRepository;
+
+    PasswordEncoder passwordEncoder;
 
     public UserResponse register(RegisterUserRequest  registerUserRequest) {
         User user = userMapper.toUser(registerUserRequest);
-        //user.setPassword(passwordEncoder.encode(user.getPasswordHash()));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
 
         User savedUser = userRepository.save(user);
         return userMapper.toUserResponse(savedUser);
