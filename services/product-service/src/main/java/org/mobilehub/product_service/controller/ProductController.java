@@ -1,28 +1,39 @@
 package org.mobilehub.product_service.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.mobilehub.product_service.dto.request.CreateProductRequest;
 import org.mobilehub.product_service.dto.request.UpdateProductRequest;
 import org.mobilehub.product_service.dto.response.ProductResponse;
 import org.mobilehub.product_service.service.ProductService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/products")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
 public class ProductController {
     private final ProductService productService;
 
-    @PostMapping("")
-    public ResponseEntity<ProductResponse> createProduct(@RequestBody CreateProductRequest request) {
-        ProductResponse created = productService.createProduct(request);
-        return ResponseEntity.status(HttpStatus.CREATED).body(created);
+    @PostMapping(value = "/create", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<ProductResponse> createProduct(
+            @RequestPart("request") CreateProductRequest request,
+            @RequestPart("files") MultipartFile[] files) {
+        //ProductResponse created = productService.createProduct(request, Arrays.stream(files).toList());
+        //return ResponseEntity.status(HttpStatus.CREATED).body(created);
+        return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
     }
 
     @PutMapping("/{id}")

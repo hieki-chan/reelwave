@@ -30,7 +30,7 @@ public class CloudMediaService {
     public UploadResponse uploadImage(MultipartFile file, String folder) throws IOException {
         var uploadResult = cloudinary.uploader().upload(file.getBytes(),
                 ObjectUtils.asMap(
-                        "folder", folder != null ? folder : "products",
+                        "folder", folder != null ? folder : "assets",
                         "resource_type", "image",
                         "quality", "auto",
                         "fetch_format", "auto"
