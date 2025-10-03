@@ -8,6 +8,7 @@ import org.mobilehub.product_service.dto.request.CreateProductRequest;
 import org.mobilehub.product_service.dto.request.UpdateProductRequest;
 import org.mobilehub.product_service.dto.response.ProductResponse;
 import org.mobilehub.product_service.entity.Product;
+import org.mobilehub.product_service.entity.ProductImage;
 import org.mobilehub.product_service.entity.ProductStatus;
 import org.mobilehub.product_service.mapper.ProductMapper;
 import org.mobilehub.product_service.repository.ProductRepository;
@@ -26,21 +27,28 @@ public class ProductService {
     private final ProductMapper productMapper;
     private final CloudMediaServiceClient cloudMediaServiceClient;
 
+    @Transactional
     public ProductResponse createProduct(CreateProductRequest request, List<MultipartFile> files) {
-        Product product = productMapper.toProduct(request);
-        Product savedProduct = productRepository.save(product);
-
         // upload images
-        List<String> imageUrls = new ArrayList<>();
+        List<UploadResponse> uploadResponses = null;
 
         if (files != null && !files.isEmpty()) {
-            List<UploadResponse> uploadResponses =
-                    cloudMediaServiceClient.uploadMultipleImages(files, "");
-
-            imageUrls = uploadResponses.stream()
-                    .map(UploadResponse::getUrl)
-                    .toList();
+            uploadResponses = cloudMediaServiceClient.uploadMultipleImages(files, "");
         }
+
+        Product product = productMapper.toProduct(request);
+
+        if(null !=  uploadResponses) {
+            for (var response : uploadResponses) {
+                ProductImage image = ProductImage.builder()
+                        .publicId(response.getPublicId())
+                        .product(product)
+                        .build();
+
+                product.getImages().add(image);
+            }
+        }
+        Product savedProduct = productRepository.save(product);
 
         return productMapper.toCreateProductResponse(savedProduct);
     }
