@@ -6,6 +6,9 @@ import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import org.mobilehub.product_service.util.ProductStatusConverter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "product")
@@ -25,4 +28,7 @@ public class Product {
     @Column(name = "status")
     @Convert(converter = ProductStatusConverter.class)
     ProductStatus status =  ProductStatus.ACTIVE;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ProductImage> images = new ArrayList<>();
 }
